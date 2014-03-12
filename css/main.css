@@ -14,7 +14,7 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
+  font: 15.34px Helvetica, Arial, sans-serif;
   font-size: small;
   text-align: center;
 }
@@ -58,9 +58,20 @@ a:visited { color: #a0a; }
 .site {
   font-size: 115%;
   text-align: justify;
-  width: 60em;
+  width: 70em;
   margin: 3em auto 2em;
   line-height: 1.5em;
+}
+
+#content {
+  width: 75%;
+  margin: 20px 5% 20px 20%;
+  padding: 10px;
+}
+
+.left-header {
+  font-size: 2em;
+  margin: 0px;
 }
 
 .header a {

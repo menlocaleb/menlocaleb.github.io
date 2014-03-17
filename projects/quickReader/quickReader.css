@@ -1,12 +1,19 @@
 /* QuickReader css file */
 
-
+/*
 body {
 	margin: 0px;
 	padding: 0px;
 
 	font-size: 1.25em;
+
+	background-color: blue;
 }
+
+a {
+	font-style: normal;
+}
+*/
 
 #content-wrapper {
 	margin: auto;
@@ -14,28 +21,46 @@ body {
 
 	padding: 25px;
 
-	background-color: white;
+	background-color: rgba(255, 255, 255, .9);
 
+	font-size: 1.5em;
+
+}
+
+#content-wrapper h1 {
+	font-size: 2em;
 }
 
 #hero-title {
 	text-align: center;
 }
 
+
+#control-panel {
+	width: 300px;
+	margin: auto;
+	margin-bottom: 50px;
+	padding: 20px 25px;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #888888;
+}
+
 #reading-window {
 	width: 250px;
 
 	margin: auto;
-	margin-bottom: 50px;
+	margin-bottom: 5px;
 	padding: 10px;
 
 	border-width: 3px;
 	border-color: #222222;
 	border-style: solid;
 
-
 	font-size: 1.5em;
 
+	background-color: white;
 }
 
 #reading-text {
@@ -44,6 +69,28 @@ body {
 	text-align: center;
 }
 
+.highlight-text {
+	color: red;
+}
+
+
+#start-stop-button {
+	background-color: green;
+}
+
+#reset-button {
+	background-color: blue;
+}
+
+.reader-button {
+	width: 100px;
+	margin: auto;
+	padding: 5px 1px;
+
+	text-align: center;
+}
+
+
 #description {
 	margin: auto;
 }
@@ -51,3 +98,13 @@ body {
 #description p {
 	text-align: center;
 }
+
+
+
+
+
+
+
+
+
+

@@ -10,13 +10,24 @@ var QuickReader = (function() {
 	var textIndex = 0;
 	var interval;
 	var timer;
-	var running;
+	var minuteToMilliseconds = 60000;
+	var running = false;
 	var containerId;
+
+	var getWord = function() {
+		var word = text[textIndex];
+		if (word.length > 2) {
+			var midPt = Math.floor((word.length-1)/2);
+			return word.substr(0,midPt) + '<span class="highlight-text">' + word.substr(midPt,1) + "</span>" + word.substr(midPt+1);
+		} else {
+			return word;
+		}
+		
+	}
 
 	var showNextWord = function() {
 		if (textIndex < text.length) {
-			console.log(text[textIndex]);
-			document.getElementById(containerId).innerHTML = text[textIndex];
+			document.getElementById(containerId).innerHTML = getWord();
 			textIndex = textIndex + 1;
 		} else {
 			app.stop();
@@ -25,13 +36,17 @@ var QuickReader = (function() {
 	}
 
 
+	app.isRunning = function() {
+		return running;
+	}
+
 	app.setContainer = function( id ) {
 		containerId = id;
 	}
 	
 	app.setInterval = function( newInterval ) {
 
-		interval = newInterval;
+		interval = (1 / newInterval) * minuteToMilliseconds;
 
 
 		if (timer) {
@@ -40,7 +55,7 @@ var QuickReader = (function() {
 		}
 
 		if (running) {
-			timer = window.setInterval(showNextWord, newInterval);
+			timer = window.setInterval(showNextWord, interval);
 		}
 
 		
@@ -68,6 +83,13 @@ var QuickReader = (function() {
 		console.log("Stopped.");
 	}
 
+	app.reset = function() {
+		textIndex = 0;
+		// if app is paused, reset screen to first word
+		if (!running) {
+			showNextWord();
+		}
+	}
 
 
 	return app;
@@ -78,10 +100,40 @@ var QuickReader = (function() {
 
 
 
+function init() {
+	var element = document.getElementById("start-stop-button");
+	element.onclick = function() {
+		if (QuickReader.isRunning()) {
+			QuickReader.stop();
+			this.innerHTML = "Start";
+			this.style.background = "green";
+		} else {
+			QuickReader.start();
+			this.innerHTML = "Stop";
+			this.style.background = "red";
+		}
+	};
+
+	document.getElementById("reset-button").onclick = function() {
+		document.getElementById("start-stop-button").onclick;
+		QuickReader.reset();
+		document.getElementById("start-stop-button").onclick;
+	}
 
 
+	var wpmInput = document.getElementById("wpm");
+	wpmInput.onchange = function() {
+		var wpm = document.getElementById("wpm").value;
+		if (!isNaN(wpm)) {
+			QuickReader.setInterval(wpm);
+		}
+	}
+	wpmInput.value = 250;
 
 
+	QuickReader.setContainer("reading-text");
+	QuickReader.setInterval(250);
+}
 
 
 
@@ -90,10 +142,9 @@ var QuickReader = (function() {
 window.onload = function() {
 	console.log(QuickReader);
 	
-	QuickReader.setContainer("reading-text");
-	QuickReader.setInterval(500);
-	QuickReader.start();
-	//QuickReader.stop();
+	init();
+	
+
 };
 
 

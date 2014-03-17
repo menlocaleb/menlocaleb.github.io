@@ -1,19 +1,25 @@
-<!doctype html>
-<html>
+---
+layout: project
+title: Quick Reader
+---
+
 	<script src="quickReader.js"></script>
 	<link rel="stylesheet" type="text/css" href="quickReader.css">
-<head>
-</head>
-<body>
 	<div id="content-wrapper">
-		<h2 id="hero-title">Quick Reader</h2>
+		<h1 id="hero-title">Quick Reader</h1>
 
-		<div id="reading-window">
-			<span id="reading-text">Hello</span>
+		<div id="control-panel">
+			<div id="reading-window">
+				<span id="reading-text">Hello</span>
+			</div>
+			<div id="start-stop-button" class="reader-button">Start</div>
+			<div id="reset-button" class="reader-button">Reset</div>
+			<label for="wpm">WPM</label>
+			<input type="text" id="wpm" name="wpm"></input>
 		</div>
 
 		<div id="description">
-			<p>This app was inspired by the Spritz app.</p>
+			<p>Support for Wikipedia articles and Tweets coming soon.</p>
+			<p>This app was inspired by the <a href="http://www.spritzinc.com/" target="_blank">Spritz app.</a></p>
 		</div>
 	</div>
-</body>

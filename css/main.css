@@ -69,6 +69,15 @@ a:visited { color: #a0a; }
   padding: 10px;
 }
 
+div#back-to-site {
+  width: 100px;
+  position: fixed;
+  margin-left: 50px;
+  margin-top: 25px;
+
+  background-color: #9999FF;
+}
+
 .left-header {
   font-size: 2em;
   margin: 0px;

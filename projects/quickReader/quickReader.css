@@ -1,0 +1,53 @@
+/* QuickReader css file */
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	font-size: 1.25em;
+}
+
+#content-wrapper {
+	margin: auto;
+	width: 950px;
+
+	padding: 25px;
+
+	background-color: white;
+
+}
+
+#hero-title {
+	text-align: center;
+}
+
+#reading-window {
+	width: 250px;
+
+	margin: auto;
+	margin-bottom: 50px;
+	padding: 10px;
+
+	border-width: 3px;
+	border-color: #222222;
+	border-style: solid;
+
+
+	font-size: 1.5em;
+
+}
+
+#reading-text {
+	display: block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#description {
+	margin: auto;
+}
+
+#description p {
+	text-align: center;
+}

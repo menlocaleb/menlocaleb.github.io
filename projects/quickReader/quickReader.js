@@ -6,7 +6,8 @@ var QuickReader = (function() {
 	var app = {};
 
 	var str = "This is a paragraph of text. I need a lot so I can test with.";
-	var text = str.split(' ');
+	var str2 = "In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort. It had a perfectly round door like a porthole, painted green, with a shiny yellow brass knob in the exact middle. The door opened on to a tube-shaped hall like a tunnel: a very comfortable tunnel without smoke, with panelled walls, and floors tiled and carpeted, provided with polished chairs, and lots and lots of pegs for hats and coats—the hobbit was fond of visitors. The tunnel wound on and on, going fairly but not quite straight into the side of the hill—The Hill, as all the people for many miles round called it—and many little round doors opened out of it, first on one side and then on another. No going upstairs for the hobbit: bedrooms, bathrooms, cellars, pantries (lots of these), wardrobes (he had whole rooms devoted to clothes), kitchens, dining-rooms, all were on the same floor, and indeed on the same passage. The best rooms were all on the left-hand side (going in), for these were the only ones to have windows, deep-set round windows looking over his garden, and meadows beyond, sloping down to the river.";
+	var text = str2.split(' ');
 	var textIndex = 0;
 	var interval;
 	var timer;
@@ -135,6 +136,32 @@ function init() {
 	QuickReader.setInterval(250);
 }
 
+function makeHttpObject() {
+  try {return new XMLHttpRequest();}
+  catch (error) {}
+  try {return new ActiveXObject("Msxml2.XMLHTTP");}
+  catch (error) {}
+  try {return new ActiveXObject("Microsoft.XMLHTTP");}
+  catch (error) {}
+
+  throw new Error("Could not create HTTP request object.");
+}
+
+
+function wikiTest( queryText ) {
+	var queryEndPt = "http://en.wikipedia.org/w/api.php?";
+	var format = "format=json";
+	var action = "action=query";
+	var rvprop = "rvprop=content";
+	var titles = "titles=Peter Pan";
+
+	var fullString = queryEndPt + format + "&" + action + "&" + rvprop + "&" + titles;
+	var fullURL = encodeURI(fullString);
+
+	return fullURL;
+
+	// encodeURI();
+}
 
 
 
@@ -143,6 +170,16 @@ window.onload = function() {
 	console.log(QuickReader);
 	
 	init();
+
+	var request = makeHttpObject();
+	request.open('GET', wikiTest(""));
+	request.onreadystatechange = function() {
+		if (this.status == 200 && this.readyState == 4) {
+    		console.log('response: ' + this.responseText);
+  		}
+	};
+	request.send(null);
+	console.log(request.responseText);
 	
 
 };

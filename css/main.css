@@ -27,9 +27,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
+a         { color: #FFB300; text-decoration: none; }
+a:hover   { color: #B27E00; text-decoration: underline; }
+a:visited { color: #FFB300; }
 
 /*****************************************************************************/
 /*
@@ -179,6 +179,15 @@ a.home-link:hover {
 
   font-size: 1.2em;
 }
+
+@media screen and (min-width: 800px) {
+
+  a.home-link {
+    display: inline;
+  }
+
+}
+
 
 
 @media screen and (min-width: 1200px) {

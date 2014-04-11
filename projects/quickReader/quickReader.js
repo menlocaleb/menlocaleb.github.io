@@ -92,6 +92,12 @@ var QuickReader = (function() {
 		}
 	}
 
+	app.setText = function( newText ) {
+		app.stop();
+		text = newText.split(' ');
+		app.reset();
+	}
+
 
 	return app;
 
@@ -148,14 +154,18 @@ function makeHttpObject() {
 }
 
 
-function wikiTest( queryText ) {
+// turns out wikipedia doesn't use cors yet
+// must use JSONP to get Wikipedia data
+function wikiTest( queryTitle ) {
 	var queryEndPt = "http://en.wikipedia.org/w/api.php?";
 	var format = "format=json";
 	var action = "action=query";
-	var rvprop = "rvprop=content";
-	var titles = "titles=Peter Pan";
+	var prop = "prop=extracts";
+	var options = "explaintext&exsectionformat=plain";
+	var titles = "titles=" + queryTitle;
+	var callback = "callback=getData";
 
-	var fullString = queryEndPt + format + "&" + action + "&" + rvprop + "&" + titles;
+	var fullString = queryEndPt + format + "&" + action + "&" + prop + "&" + options + "&" + titles + "&" + callback;
 	var fullURL = encodeURI(fullString);
 
 	return fullURL;
@@ -163,7 +173,18 @@ function wikiTest( queryText ) {
 	// encodeURI();
 }
 
-
+function getData( jsonData ) {
+	console.log(jsonData);
+	var pages = jsonData.query.pages;
+	for (var propertyName in pages) {
+		if (propertyName == '-1') {
+			QuickReader.setText("Invalid title.");
+			break;
+		}
+		QuickReader.setText(pages[propertyName].extract);
+		break;
+	}
+}
 
 
 window.onload = function() {
@@ -171,16 +192,15 @@ window.onload = function() {
 	
 	init();
 
-	var request = makeHttpObject();
-	request.open('GET', wikiTest(""));
-	request.onreadystatechange = function() {
-		if (this.status == 200 && this.readyState == 4) {
-    		console.log('response: ' + this.responseText);
-  		}
-	};
-	request.send(null);
-	console.log(request.responseText);
-	
+	var jsonpScript = document.createElement("script");
+	jsonpScript.type = "text/javascript";
+	jsonpScript.src = wikiTest("Peter Pan");
+
+	console.log(wikiTest("Ghost"));
+
+	document.getElementsByTagName("head")[0].appendChild(jsonpScript);
+
+	//console.log();	
 
 };
 

@@ -13,10 +13,12 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
+  /* 0035B2 195EFF 004CFF B27E00 FFB300 */
+  background-color: #004CFF;
   font: 15.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+  color: #FFF;
   text-align: center;
+  line-height: 1.2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -115,30 +117,70 @@ div#back-to-site {
 }
 
 .footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
+  width: 30em;
+  color: #eee;
+  margin: 2em auto 0px auto;
   overflow: hidden;
 }
 
 .footer .contact {
+  width: 45%;
+  margin: 5px 2.5% 5px 2.5%;
   float: left;
-  margin-right: 3em;
 }
 
 .footer .contact a {
-  color: #8085C1;
+  color: #eee;
 }
 
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+#home-content {
+  width: 80%;
+  margin: 10% auto 5% auto;
+  position: relative;
+}
+
+#title {
+  width: 100%;
+  margin: 0.5em 0px;
+  font-size: 8em;
+}
+
+#title-right {
+  float: left;
+}
+
+#title-left {
   float: right;
 }
 
-.footer .rss img {
-  border: 0;
+#home-content > #links {
+  position: relative;
+  top: -3.9em;
+  margin: auto;
+  width: 25%;
+  font-size: 4em;
+}
+
+a.home-link, a.home-link:visited {
+  color: #FFF;
+  text-decoration: none;
+  display: block;
+
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+}
+
+a.home-link:hover {
+  color: #FFB300; /* B27E00 FFB300 */
+
+  -webkit-transform:rotate(5deg);
+  transform:rotate(5deg);
 }
 
 /*****************************************************************************/

@@ -1,0 +1,3 @@
+[submodule "projects/tentLights"]
+	path = projects/tentLights
+	url = https://github.com/menlocaleb/tentLights.git

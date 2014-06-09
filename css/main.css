@@ -12,10 +12,17 @@
 
 html, body { height: 100%; }
 
+@font-face{
+  font-family: "NOVA";
+  src: url(../fonts/NOVABOLD.otf),
+  url(../fonts/NOVABOLD.otf);
+
+}
+
 body {
   /* 0035B2 195EFF 004CFF B27E00 FFB300 */
   background-color: #004CFF;
-  font: 15.34px Helvetica, Arial, sans-serif;
+  font: 15.34px 'NOVA', Helvetica, Arial, sans-serif;
   color: #FFF;
   text-align: center;
   line-height: 1.2;

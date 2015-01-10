@@ -1,18 +1,198 @@
 ---
 layout: home
 title: Caleb Young
+
+work-experience:
+  -
+    employer: "Microsoft"
+    time-range: "Summer 2014"
+    position: "Software Development Engineer in Test"
+    actions:
+      - "Built a web portal to compare Azure Storage performance data more quickly and accurately"
+      - "Created capability to filter, analyze and categorize high latency requests"
+  -
+    employer: "The Boeing Company"
+    time-range: "Summer 2013"
+    position: "Software Engineering Intern"
+    actions:
+      - "Improved performance and maintainability of warfare simulation code"
+      - "Migrated legacy functional code into an object oriented structure"
+      - "Unit tested code using C++ Boost library, and fully documented code with Doxygen"
+  -
+    employer: "Planet Labs Inc."
+    time-range: "Summer 2012"
+    position: "Summer Intern"
+    actions:
+      - "Created a complex online inventory system using HTML, Javascript, PHP, and MySQL"
+      - "Developed a Java application to synchronize EAGLE circuit diagram footprints between multiple EAGLE libraries"
+      - "Revised code to transfer EAGLE circuit diagrams into CAD models"
+  -
+    employer: "NASA Ames Research Center"
+    time-range: "Summer 2011"
+    position: "Intern with PhoneSat Project"
+    actions:
+      - "Built an inventory database for the project’s lab using FileMaker Pro software"
+      - "Worked with a team to develop an instruction manual for building their nano-satellite"
+      - "Selected for internship from NASA Inspire Program’s national applicant pool"
+
+
+
+projects: 
+  -
+    title: "Tent Lights"
+    description: "Built a web portal to compare Azure Storage performance data more quickly and accurately, Built a web portal to compare Azure Storage performance data more quickly and accurately, Built a web portal to compare Azure Storage performance data more quickly and accurately, Built a web portal to compare Azure Storage performance data more quickly and accurately"
+    img: "/images/tentLights.png"
+    demo-link: "#"
+    github-link: "#"
+
 ---
 
-<div id="home-content">
-	<div id="title">
-		<span id="title-right">Caleb</span>
-		<span id="title-left">Young</span>
-		<div style="clear:both"></div>
-	</div>
-	<div id="links">
-		<a class="home-link" href="/about/">about</a>
-		<a class="home-link" href="/cv/">resume</a>
-		<a class="home-link" href="/blog/">blog</a>
-		<a class="home-link" href="/projects/">projects</a>
+<div class="row">
+	<div class="small-12 columns">
+		<h1>Caleb Young</h1>
+		<h3 class="subheader">
+			Experienced Developer and Aspiring 3D Artist and Animator
+		</h3>
+		<hr>
+		<div data-magellan-expedition="fixed">
+		  <dl class="sub-nav">
+		  	<dd data-magellan-arrival="about"><a href="#about">About</a></dd>
+		    <dd data-magellan-arrival="courses"><a href="#courses">Courses</a></dd>
+		    <dd data-magellan-arrival="work-experience"><a href="#work-experience">Work Experience</a></dd>
+		    <dd data-magellan-arrival="projects"><a href="#projects">Projects</a></dd>
+		    <dd data-magellan-arrival="show-reels"><a href="#show-reels">Show Reels</a></dd>
+		  </dl>
+		</div>
+
+		<section class="homepage-section">
+			<a name="about"></a>
+			<h2 data-magellan-destination="about">About</h2>
+			<hr>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+
+		<section class="homepage-section">
+			<a name="courses"></a>
+			<h2 data-magellan-destination="courses">Courses</h2>
+			<hr>
+			<div class="clearfix">
+				<dl class="tabs vertical" data-tab>
+				  <dd class="active"><a href="#cs-core">Core</a></dd>
+				  <dd><a href="#systems-depth">Systems and Security</a></dd>
+				  <dd><a href="#interfaces-depth">Graphics and Interfaces</a></dd>
+				  <dd><a href="#miscellaneous">Miscellaneous</a></dd>
+				</dl>
+				<div class="tabs-content vertical">
+				  <div class="content active" id="cs-core">
+				    <ul>
+				    	<li>Fundamentals of Computer Programming</li>
+				    	<li>Object Oriented Programming in C++</li>
+				    	<li>Data Structures and Management</li>
+				    	<li>Design and Analysis of Algorithms</li>
+				    </ul>
+				  </div>
+				  <div class="content" id="systems-depth">
+				    <ul>
+				    	<li>Intro to Computer Systems</li>
+				    	<li>Intro to Database Systems</li>
+				    	<li>Intro to Parallel Computing</li>
+				    	<li>Operating Systems</li>
+				    	<li>Network Penetration and Security</li>
+				    	<li>Intro to Computer Networking (* currently taking)</li>
+				    	<li>Massively Parallel Programming in CUDA (* currently taking)</li>
+				    </ul>
+				  </div>
+				  <div class="content" id="interfaces-depth">
+				    <ul>
+				    	<li>Human Computer Interaction</li>
+				    	<li>Intro to Computer Graphics</li>
+				    	<li>Intermediate Computer Graphics</li>
+				    	<li>Digital Image Analysis</li>
+				    	<li>Computational Photography</li>
+				    </ul>
+				  </div>
+				  <div class="content" id="miscellaneous">
+				    <ul>
+				    	<li>Intro to Artificial Intelligence</li>
+				    	<li>Agile Software Development</li>
+				    	<li>Media Construction</li>
+				    	<li>3D Animation (* currently taking)</li>
+				    	<li>Game Development Studio (* currently taking)</li>
+				    </ul>
+				  </div>
+				</div>
+			</div>
+			<p></p>
+		</section>
+
+		<section class="homepage-section">
+			<a name="work-experience"></a>
+			<h2 data-magellan-destination="work-experience">Work Experience</h2>
+			<hr>
+			{% for job in page.work-experience %}
+				<div class="row">
+					<div class="small-12 columns clearfix">
+						<h3>{{ job.employer }} <small>{{ job.time-range }}</small></h3>
+					</div>
+					<div class="small-12 medium-4 columns">
+						<h5 class="subheader">{{ job.position }}</h5>
+					</div>
+					<div class="small-12 medium-8 columns">
+						<ul>
+							{% for action in job.actions %}
+								<li>{{ action }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+
+		<section class="homepage-section">
+			<a name="projects"></a>
+			<h2 data-magellan-destination="projects">Projects</h2>
+			<hr>
+			{% for project in page.projects %}
+				<div class="project-overview">
+					<h3 class="subheader">{{ project.title }}</h3>
+					<div class="row">
+						<div class="small-10 small-offset-1 medium-4 medium-offset-0 columns">
+							<img src="{{ project.img }}">
+							<ul class="inline-list">
+								<li><a href="{{ project.demo-link }}">Demo</a></li>
+								<li><a href="{{ project.github-link }}">View on Github</a></li>
+							</ul>
+						</div>
+						<div class="small-12 medium-8 medium-offset-0 columns">
+							<p>{{ project.description }}</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+
+		<section class="homepage-section">
+			<a name="show-reels"></a>
+			<h2 data-magellan-destination="show-reels">3D Modeling and Animation Work</h2>
+			<hr>
+			<div class="row">
+				<div class="small-12 columns">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 medium-6 columns">
+					<h3 class="subheader">Blender</h3>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="small-12 medium-6 columns">
+					<h3 class="subheader">Maya</h3>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+		</section>
 	</div>
 </div>
+

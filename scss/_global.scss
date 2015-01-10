@@ -1,0 +1,28 @@
+/* Global styles for menlocaleb.github.io */
+
+#homepage-top-section {
+	background: $primary-color; 
+	padding-top:10px;
+}
+
+#homepage-top-section-icons img {
+	height: 60px;
+}
+
+
+#footer {
+	background-color: scale-color($jet, $lightness: 15%);
+	color: white;
+	text-align: center;
+	padding-top: 5px;
+}
+
+@media #{$medium-up} {
+	#footer {
+	text-align: left;
+	}
+}
+
+.site-nav {
+	border-bottom: 2px solid $primary-color;
+}

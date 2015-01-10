@@ -124,7 +124,7 @@ $primary-color: #2E4FBE;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-// $body-bg: $white;
+$body-bg: url("../images/light_wool/light_wool.png");
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -222,14 +222,14 @@ $header-font-color: $primary-color;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
-$subheader-font-color: scale-color($jet, $lightness: 35%);
+$subheader-font-color: scale-color($jet, $lightness: 15%);
 // $subheader-font-weight: $font-weight-normal;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
 $small-font-size: 70%;
-$small-font-color: scale-color($jet, $lightness: 35%);
+$small-font-color: $subheader-font-color;
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
@@ -1207,7 +1207,7 @@ $small-font-color: scale-color($jet, $lightness: 35%);
 // We use this to control the definition
 // $sub-nav-font-family: $body-font-family;
 // $sub-nav-font-size: rem-calc(14);
-// $sub-nav-font-color: $aluminum;
+$sub-nav-font-color: $subheader-font-color;
 // $sub-nav-font-weight: $font-weight-normal;
 // $sub-nav-text-decoration: none;
 // $sub-nav-padding: rem-calc(3 16);

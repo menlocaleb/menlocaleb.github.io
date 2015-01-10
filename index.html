@@ -40,37 +40,69 @@ work-experience:
 projects: 
   -
     title: "Tent Lights"
-    description: "Built a web portal to compare Azure Storage performance data more quickly and accurately, Built a web portal to compare Azure Storage performance data more quickly and accurately, Built a web portal to compare Azure Storage performance data more quickly and accurately, Built a web portal to compare Azure Storage performance data more quickly and accurately"
+    description: "In order to learn WebGL and Three.js I decided to create a web-app that allows users to pretend to be the lighting directors for Northwestern University Dance Marathon (NUDM). While this is only a mockup, I hope to add a full model of the NUDM tent soon and more realistic lighting controls."
     img: "/images/tentLights.png"
-    demo-link: "#"
-    github-link: "#"
+    demo-link: "/projects/tentLights"
+    github-link: "https://github.com/menlocaleb/tentLights"
+  -
+    title: "Quick Reader"
+    description: "This was a proof-of-concept project to prove that I could emulate the <a href='http://www.spritzinc.com/'>Spritz</a> app in Javascript. The UI needs work, but the general concept is there. Currently the text is pulled from the Wikipedia article on Peter Pan."
+    img: "/images/quickReader.png"
+    demo-link: "/projects/quickReader"
+    github-link: "https://github.com/menlocaleb/menlocaleb.github.io/tree/master/projects/quickReader"
+  -
+    title: "Free Food At Work"
+    description: "This was a quick mockup of an HTML5 game for a Microsoft Intern Game Hackathon this past summer. Move using the arrow keys, and try to get the free pizza without being caught by Clippy!"
+    img: "/images/freeFoodAtWork.png"
+    demo-link: "projects/freeFoodAtWork"
+    github-link: "https://github.com/menlocaleb/menlocaleb.github.io/tree/master/projects/freeFoodAtWork"
 
 ---
-
+<div class="site-nav" data-magellan-expedition="fixed">
+  <dl class="sub-nav">
+  	<dd data-magellan-arrival="caleb-young"><a href="#caleb-young">Home</a></dd>
+  	<dd data-magellan-arrival="about"><a href="#about">About</a></dd>
+    <dd data-magellan-arrival="courses"><a href="#courses">Courses</a></dd>
+    <dd data-magellan-arrival="work-experience"><a href="#work-experience">Work Experience</a></dd>
+    <dd data-magellan-arrival="projects"><a href="#projects">Projects</a></dd>
+    <dd data-magellan-arrival="show-reels"><a href="#show-reels">Show Reels</a></dd>
+  </dl>
+</div>
+<div id="homepage-top-section">
+	<div class="row">
+		<div class="small-12 columns panel radius">
+			<a name="caleb-young"></a>
+			<h1 data-magellan-destination="caleb-young">Caleb Young</h1>
+			<h3 class="subheader">
+				Experienced Developer and Aspiring 3D Artist and Animator
+			</h3>
+			<hr>
+			<ul id="homepage-top-section-icons" class="small-block-grid-1 medium-block-grid-3 text-center">
+				<li>
+					<h5>Student at Northwestern Univeristy</h5>
+					<img src="images/university2.svg" title="Icons made by Freepik from www.flaticon.com is licensed by CC BY 3.0">
+				</li>
+				<li>
+					<h5>4 Software Internships</h5>
+					<img src="images/curriculum.svg" title="Icons made by Freepik from www.flaticon.com is licensed by CC BY 3.0">
+				</li>
+				<li>
+					<h5>Extensive Project Experience</h5>
+					<img src="images/html-tag.svg" title="Icons made by Freepik from www.flaticon.comis licensed by CC BY 3.0">
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+</div>
 <div class="row">
 	<div class="small-12 columns">
-		<h1>Caleb Young</h1>
-		<h3 class="subheader">
-			Experienced Developer and Aspiring 3D Artist and Animator
-		</h3>
-		<hr>
-		<div data-magellan-expedition="fixed">
-		  <dl class="sub-nav">
-		  	<dd data-magellan-arrival="about"><a href="#about">About</a></dd>
-		    <dd data-magellan-arrival="courses"><a href="#courses">Courses</a></dd>
-		    <dd data-magellan-arrival="work-experience"><a href="#work-experience">Work Experience</a></dd>
-		    <dd data-magellan-arrival="projects"><a href="#projects">Projects</a></dd>
-		    <dd data-magellan-arrival="show-reels"><a href="#show-reels">Show Reels</a></dd>
-		  </dl>
-		</div>
-
 		<section class="homepage-section">
 			<a name="about"></a>
 			<h2 data-magellan-destination="about">About</h2>
 			<hr>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</section>
-
 		<section class="homepage-section">
 			<a name="courses"></a>
 			<h2 data-magellan-destination="courses">Courses</h2>
@@ -158,7 +190,7 @@ projects:
 					<div class="row">
 						<div class="small-10 small-offset-1 medium-4 medium-offset-0 columns">
 							<img src="{{ project.img }}">
-							<ul class="inline-list">
+							<ul class="small-block-grid-2 text-center">
 								<li><a href="{{ project.demo-link }}">Demo</a></li>
 								<li><a href="{{ project.github-link }}">View on Github</a></li>
 							</ul>
@@ -182,14 +214,14 @@ projects:
 			</div>
 			<div class="row">
 				<div class="small-12 medium-6 columns">
-					<h3 class="subheader">Blender</h3>
+					<h3 class="text-center">Blender</h3>
 					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h4 class="subheader text-center">Demos coming soon!</h4>
 				</div>
 				<div class="small-12 medium-6 columns">
-					<h3 class="subheader">Maya</h3>
+					<h3 class="text-center">Maya</h3>
 					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h4 class="subheader text-center">Demos coming soon!</h4>
 				</div>
 			</div>
 		</section>

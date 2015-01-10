@@ -1,3 +1,9 @@
 name: Caleb Young
 markdown: redcarpet
 highlighter: 'pygments'
+exclude:
+  - "Gruntfile.js"
+  - "bower.js"
+  - "package.js"
+  - "README.md"
+  - "scss"
